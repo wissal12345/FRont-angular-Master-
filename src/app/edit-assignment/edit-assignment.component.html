@@ -1,6 +1,15 @@
+<br><br>
 
 <div class="container" *ngIf="assignment">
-  <h1>Modification de l'assignment</h1>
+  <mat-card >
+    <div class="header">
+      <strong><h2 class="title ">Modification de l'assignment</h2></strong>
+      <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  <br>
+
   <form ngForm class="form">
     <mat-form-field>
       <input matInput placeholder="Edition du nom" [(ngModel)]="nomAssignment"
@@ -17,4 +26,6 @@
       Sauver
     </button>
   </form>
+
+  </mat-card>
 </div>

@@ -27,6 +27,7 @@ import { EditAssignmentComponent } from './edit-assignment/edit-assignment.compo
 import { AuthGuard } from './shared/auth.guard';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 
 const routes: Routes = [
   {
@@ -46,7 +47,7 @@ const routes: Routes = [
     component:AssignmentDetailComponent
   },
   {
-    path:"assignment/:id/edit",
+    path:"assignment/edit/:id",
     component:EditAssignmentComponent,
     canActivate : [AuthGuard]
   }
@@ -66,7 +67,9 @@ const routes: Routes = [
     BrowserAnimationsModule, MatButtonModule, MatIconModule, MatDividerModule,
     MatInputModule, MatFormFieldModule, MatDatepickerModule, MatNativeDateModule,
     MatListModule, MatCardModule, MatCheckboxModule, MatSlideToggleModule, MatTableModule,
-    RouterModule.forRoot(routes), HttpClientModule, NgbModule
+    RouterModule.forRoot(routes), HttpClientModule, NgbModule,ConfirmationPopoverModule.forRoot({
+      confirmButtonType: 'danger', // set defaults here
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

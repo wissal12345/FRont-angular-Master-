@@ -18,6 +18,10 @@
   background-color: rgba(4, 20, 63, 0.911);
   color: white;
 }
+.ff{
+  background-color: rgba(129, 9, 9, 0.911);
+  color: white;
+}
 .mat-column-demo-id {
   width: 32px;
   border-right: 1px solid currentColor;

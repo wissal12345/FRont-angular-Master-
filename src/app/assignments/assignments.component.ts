@@ -2,11 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AssignmentsService } from '../shared/assignments.service';
 import { Assignment } from './assignment.model';
+import { NgbModalConfig, NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { EditAssignmentComponent } from '../edit-assignment/edit-assignment.component';
+import { AssignmentDetailComponent } from '../assignment-detail/assignment-detail.component';
 
 @Component({
   selector: 'app-assignments',
   templateUrl: './assignments.component.html',
   styleUrls: ['./assignments.component.css'],
+
 })
 export class AssignmentsComponent implements OnInit {
   titre = 'Liste des assignments';
@@ -29,8 +33,8 @@ export class AssignmentsComponent implements OnInit {
 
   constructor(private assignmentService: AssignmentsService,
     private assignmentsService: AssignmentsService,
-    private route: ActivatedRoute,
-    private router: Router,) {}
+    private route: ActivatedRoute,config: NgbModalConfig, private ModalService: NgbModal
+   , private router: Router,) {}
   pages = 1;
   pageSize = 5;
   modalService: any;
@@ -66,14 +70,16 @@ export class AssignmentsComponent implements OnInit {
 
     console.log('demande envoyée au service');
   }
+  cancelClicked: boolean = false;
+  popoverMessage: string = 'Are you sure to delete this ?';
+  deleteCatalogue(id: any) {
+    this.assignmentsService.deleteAssignment(id).subscribe(
+      () => {
+        this.assignments = this.assignments.filter(assignments => assignments.id != id)
+      }
+    )
+  }
  
-  // onDelete(assignment: any){ 
-  //   this.assignmentsService.deleteAssignment(assignment.id).subscribe(
-  //     (res)=>{
-  //       console.log(res);
-  //       this.ngOnInit;
-    
-  //     })}
   pageSuivante() {
     if (this.hasNextPage) {
       this.page = this.nextPage;
@@ -97,4 +103,11 @@ export class AssignmentsComponent implements OnInit {
     this.page = 1;
     this.getAssignments();
   }
+  closeResult = '';
+
+ 
+  edit() {
+    this.modalService.open(AssignmentDetailComponent);
+  }
+  
 }

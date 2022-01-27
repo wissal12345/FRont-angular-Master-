@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Assignment } from '../assignments/assignment.model';
 import { AssignmentsService } from '../shared/assignments.service';
+import {NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-edit-assignment',
@@ -16,7 +17,7 @@ export class EditAssignmentComponent implements OnInit {
 
   constructor(private route:ActivatedRoute,
               private router:Router,
-              private assignmentsService:AssignmentsService) { }
+              private assignmentsService:AssignmentsService,public activeModal: NgbActiveModal,) { }
 
   ngOnInit(): void {
     // EXEMPLE RECUPERATION PARAMETRES APRES LE ? Et fragment après le #
