@@ -1,11 +1,26 @@
-<nav>
-  <a routerLink="/home">
-    <h1>{{titre}}</h1>
-  </a>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/home">{{titre}}</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      
+      <ul class="navbar-nav ml-auto">
+          <li  class="nav-item"><a (click)="onLogin()" class="nav-link">Login</a></li>
+          <li  class="nav-item"><button mat-flat-button color="primary" (click)="initialiserLaBaseAvecDonneesDeTest()">PeuplerBD</button></li>
+
+          <!-- <li *ngIf="!loggedIn" class="nav-item"><a routerLink="#" class="nav-link">Inscription</a></li> -->
+          <!-- <li *ngIf="loggedIn"class="nav-item"><button (click)="logout()" class="nav-link ">Logout </button></li>-->
+      </ul>
+    </div>
+  </div>
 </nav>
-<mat-slide-toggle color="primary" (click)="onLogin()">Login</mat-slide-toggle>
 <br>
-<button mat-flat-button color="primary" (click)="initialiserLaBaseAvecDonneesDeTest()">PeuplerBD</button>
+<br>
+
 <!--
   La ligne suivante dit "on affiche le composant qui correspond à l'URL courant"
   (à la route courante)

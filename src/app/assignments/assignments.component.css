@@ -14,14 +14,25 @@
 .demo-table {
   width: 50%;
 }
-
+.gg{
+  background-color: rgba(4, 20, 63, 0.911);
+  color: white;
+}
 .mat-column-demo-id {
   width: 32px;
   border-right: 1px solid currentColor;
   padding-right: 24px;
   text-align: center;
 }
+.center {
+  display: flex;
+  justify-content: center;
+}
+.vert{
+  color:green;
+  font-style:initial;
 
+}
 .mat-column-demo-nom {
   width: 600px;
   padding-left: 16px;
@@ -29,7 +40,9 @@
 }
 
 .mat-column-demo-dateRendu {
-  font-style: italic;
+  width: 600px;
+  padding-left: 16px;
+  font-size: 20px;
 }
 
 .mat-column-demo-rendu {

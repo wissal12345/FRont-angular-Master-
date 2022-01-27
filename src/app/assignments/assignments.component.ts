@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AssignmentsService } from '../shared/assignments.service';
 import { Assignment } from './assignment.model';
 
@@ -24,9 +25,16 @@ export class AssignmentsComponent implements OnInit {
   displayedColumns: string[] = ['demo-id', 'demo-nom', 'demo-dateDeRendu', 'demo-rendu'];
 
   assignments: Assignment[] = [];
+  assignmentTransmis?: Assignment;
 
-  constructor(private assignmentService: AssignmentsService) {}
-
+  constructor(private assignmentService: AssignmentsService,
+    private assignmentsService: AssignmentsService,
+    private route: ActivatedRoute,
+    private router: Router,) {}
+  pages = 1;
+  pageSize = 5;
+  modalService: any;
+  collectionSize =this.assignments.length;
   ngOnInit(): void {
     // appelé AVANT l'affichage (juste après le constructeur)
     console.log('AVANT AFFICHAGE');
@@ -47,7 +55,6 @@ export class AssignmentsComponent implements OnInit {
         this.assignments = data.docs;
         this.page = data.page;
 
-        this.limit = data.limit;
         this.totalDocs = data.totalDocs;
         this.totalPages = data.totalPages;
         this.hasPrevPage = data.hasPrevPage;
@@ -59,6 +66,14 @@ export class AssignmentsComponent implements OnInit {
 
     console.log('demande envoyée au service');
   }
+ 
+  // onDelete(assignment: any){ 
+  //   this.assignmentsService.deleteAssignment(assignment.id).subscribe(
+  //     (res)=>{
+  //       console.log(res);
+  //       this.ngOnInit;
+    
+  //     })}
   pageSuivante() {
     if (this.hasNextPage) {
       this.page = this.nextPage;
