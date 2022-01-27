@@ -28,6 +28,8 @@ import { AuthGuard } from './shared/auth.guard';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { SearchFilterPipe } from './search-filter.pipe';
 
 const routes: Routes = [
   {
@@ -60,14 +62,16 @@ const routes: Routes = [
     NonRenduDirective,
     AssignmentDetailComponent,
     AddAssignmentComponent,
-    EditAssignmentComponent
+    EditAssignmentComponent,
+    SearchFilterPipe
   ],
   imports: [
     BrowserModule, FormsModule,
     BrowserAnimationsModule, MatButtonModule, MatIconModule, MatDividerModule,
     MatInputModule, MatFormFieldModule, MatDatepickerModule, MatNativeDateModule,
     MatListModule, MatCardModule, MatCheckboxModule, MatSlideToggleModule, MatTableModule,
-    RouterModule.forRoot(routes), HttpClientModule, NgbModule,ConfirmationPopoverModule.forRoot({
+    RouterModule.forRoot(routes), HttpClientModule, NgbModule,Ng2SearchPipeModule
+,ConfirmationPopoverModule.forRoot({
       confirmButtonType: 'danger', // set defaults here
     }),
   ],

@@ -13,6 +13,8 @@ import { AssignmentDetailComponent } from '../assignment-detail/assignment-detai
 
 })
 export class AssignmentsComponent implements OnInit {
+  searchTerm!: string;
+  term!: string;
   titre = 'Liste des assignments';
   couleur = 'violet';
   // Pour la pagination
@@ -27,6 +29,7 @@ export class AssignmentsComponent implements OnInit {
 
   // pour l'affichage en table
   displayedColumns: string[] = ['demo-id', 'demo-nom', 'demo-dateDeRendu', 'demo-rendu'];
+  allassignments!: Assignment[];
 
   assignments: Assignment[] = [];
   assignmentTransmis?: Assignment;
@@ -106,8 +109,4 @@ export class AssignmentsComponent implements OnInit {
   closeResult = '';
 
  
-  edit() {
-    this.modalService.open(AssignmentDetailComponent);
-  }
-  
 }

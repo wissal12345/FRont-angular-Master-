@@ -1,20 +1,33 @@
 <mat-card *ngIf="assignmentTransmis">
-  <mat-card-title>{{assignmentTransmis.nom}}</mat-card-title>
-  <mat-card-subtitle>{{assignmentTransmis.dateDeRendu | date}}</mat-card-subtitle>
-  <div class="container">
-    <mat-checkbox *ngIf="!assignmentTransmis.rendu" (click)="onAssignmentRendu()">
-      Rendu
-    </mat-checkbox>
-
-    <nav>
-        <button mat-button mat-flat-button color="primary" (click)="onClickEdit()"
-                [disabled]="!isAdmin()">
-          EDIT
-        </button>
-    </nav>
-
-    <button mat-button mat-flat-button color="warn" (click)="onDelete()">
-      DELETE
-    </button>
-  </div>
+  
+<div class="card text-white bg-primary mb-3" style="max-width: 50rem;max-height:100rem;left: 510px;">
+  
+    <div class="card-header d-flex w-100 justify-content-between">
+      <h4 class="mb-1">Le {{assignmentTransmis.dateDeRendu | date}}</h4>
+      <small><h5>{{assignmentTransmis.id}}</h5></small>
+    </div>
+  <div class="card-body">
+    <h4 class="card-title">{{assignmentTransmis.nom}}</h4>
+    <p class="card-text">
+      <mat-card-subtitle></mat-card-subtitle>
+        <div class="container">
+        <mat-checkbox *ngIf="!assignmentTransmis.rendu" (click)="onAssignmentRendu()">
+          Rendu
+        </mat-checkbox>
+        <nav>
+          <button mat-button mat-flat-button color="primary" (click)="onClickEdit()"
+                  [disabled]="!isAdmin()">
+            EDIT
+          </button>
+      </nav>
+  
+      <button mat-button mat-flat-button color="warn" (click)="onDelete()">
+        Delete
+      </button>
+      <button mat-button mat-flat-button color="warn" routerLink="/home">
+        Return
+      </button>
+        </div>
+     </div>
+</div>
 </mat-card>

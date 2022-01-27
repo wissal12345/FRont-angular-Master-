@@ -15,8 +15,22 @@
   width: 50%;
 }
 .gg{
-  background-color: rgba(4, 20, 63, 0.911);
+  background-color: rgba(6, 38, 126, 0.911);
   color: white;
+}
+.searchTerm {
+  width: 50%;
+  border: 3px solid rgba(6, 38, 126, 0.911);
+  padding: 15px;
+  height: 10px;
+  border-radius: 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus {
+  color: #00B4CC;
+  
 }
 .ff{
   background-color: rgba(129, 9, 9, 0.911);
