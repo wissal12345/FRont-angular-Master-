@@ -1,13 +1,9 @@
 {
   "name": "assignment-app",
   "version": "0.0.0",
-  "engines": {
-    "node": "14.17.3",
-    "npm": "6.14.13"
-      },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
