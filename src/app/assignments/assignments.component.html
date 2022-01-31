@@ -114,4 +114,69 @@
     <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
   </div>
 </ng-template>
+  <!-- <p>Nb assignments par page : <input type="range" min=1 max=100 value=10 (change)="getAssignments()" [(ngModel)]="limit"> {{limit}}</p> -->
+  <!-- <div class="paginationBtn">
+    <button mat-raised-button color="primary" (click)="premierePage()" [disabled]="page===1">Première</button>&nbsp;
+    <button mat-raised-button color="primary" (click)="pagePrecedente()" [disabled]="!hasPrevPage">Précédente</button>&nbsp;
+    <button mat-rais                    
+    </button> --> <!--
+ed-button color="primary" (click)="pageSuivante()" [disabled]="!hasNextPage">Suivante</button>&nbsp;
+    <button mat-raised-button color="primary" (click)="dernierePage()" [disabled]="page===totalPages">Dernière</button>;
+  </div> -->
+
+  <!-- <mat-divider></mat-divider> -->
+  <!-- <mat-list *ngFor="let assignment of assignments | slice: (pages-1) * pageSize : pages * pageSize; let i=index ">
+    <nav>
+      <a routerLink="/assignment/{{assignment.id}}">
+        <h3 mat-subheader>{{assignment.dateDeRendu | date}}</h3>
+        <mat-list-item>
+          <p appRendu *ngIf="assignment.rendu; else nonsoumis">
+            {{i}} - {{assignment.nom}},
+            a été rendu par l'élève.
+          </p>
+          <ng-template #nonsoumis>
+            <p appNonRendu>{{i}} - {{assignment.nom}} n'a pas été
+              rendu par l'élève.</p>
+          </ng-template>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      </a>
+    </nav>  -->
+<!-- <ngb-pagination class="mx-3"
+    [(page)]="pages"
+    [pageSize]="pageSize"
+    [collectionSize]="assignments.length"></ngb-pagination> -->
+  <!-- </mat-list> trdrdfytfuyf-->
   
+
+  <!-- <table mat-table [dataSource]="assignments" class="mat-elevation-z8 demo-table" > -->
+    <!-- Position Column -->
+    <!-- <ng-container matColumnDef="demo-id">
+      <th mat-header-cell *matHeaderCellDef> Id</th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container> -->
+
+    <!-- Name Column -->
+    <!-- <ng-container matColumnDef="demo-nom">
+      <th mat-header-cell *matHeaderCellDef > Nom </th>
+      <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
+    </ng-container> -->
+
+    <!-- Weight Column -->
+    <!-- <ng-container matColumnDef="demo-dateDeRendu">
+      <th mat-header-cell *matHeaderCellDef> Date de Rendu </th>
+      <td mat-cell *matCellDef="let element"> {{element.dateDeRendu| date}} </td>
+    </ng-container> -->
+
+    <!-- Symbol Column -->
+    <!-- <ng-container matColumnDef="demo-rendu">
+      <th mat-header-cell *matHeaderCellDef> Rendu </th>
+      <td mat-cell *matCellDef="let element"> {{element.rendu}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+ 
+
+</main> -->
