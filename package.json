@@ -9,7 +9,7 @@
     "ng": "ng",
     "start": "node server.js",
     "build": "ng build",
-    "build:production" : " node --version " ,
+    
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
